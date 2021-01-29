@@ -1,0 +1,80 @@
+<mvc:View controllerName="bi.training.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout">
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="{i18n>title}">
+                    <content>
+                        <l:Splitter orientation="Vertical" height="45%">
+                            <Table items="{/Customers}" noDataText="There are no data" selectionChange="handleItemPress"
+                                mode="SingleSelectMaster">
+                                <columns>
+                                    <Column>
+                                        <header><Text text="Title"></Text></header>
+                                    </Column>
+                                    <Column>
+                                        <header><Text text="Name"></Text></header>
+                                    </Column>
+                                    <Column>
+                                        <header><Text text="Address"></Text></header>
+                                    </Column>
+                                    <Column>
+                                        <header><Text text="City"></Text></header>
+                                    </Column>
+                                    <Column>
+                                        <header><Text text="Country"></Text></header>
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{ContactTitle}"></Text>
+                                            <Text text="{ContactName}"></Text>
+                                            <Text text="{Address}"></Text>
+                                            <Text text="{City}"></Text>
+                                            <Text text="{Country}"></Text>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </l:Splitter>
+
+                        <l:Splitter id="idSplitter" orientation="Vertical" height="45%" class="sapUiMediumMarginTop">
+                            <Table items="{Orders}">
+                                <columns>
+                                    <Column>
+                                        <Text text="Order Date"></Text>
+                                        </Column>
+                                        <Column>
+                                        <Text text="Ship Name"></Text>
+                                        </Column>
+                                        <Column>
+                                        <Text text="Ship Address"></Text>
+                                        </Column>
+                                        <Column>
+                                        <Text text="Ship City"></Text>
+                                        </Column>
+                                        <Column>
+                                        <Text text="Ship Country"></Text>
+                                    </Column>
+                                </columns>
+
+                                <items>
+                                    <ColumnListItem>
+                                        <cells>
+                                            <Text text="{path: 'OrderDate' , type: 'sap.ui.model.type.DateTime'}"></Text>
+                                            <Text text="{ShipName}"></Text>
+                                            <Text text="{ShipAddress}"></Text>
+                                            <Text text="{ShipCity}"></Text>
+                                            <Text text="{ShipCountry}"></Text>
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </l:Splitter>
+                    </content>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>

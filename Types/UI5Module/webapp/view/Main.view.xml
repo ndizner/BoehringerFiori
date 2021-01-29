@@ -1,0 +1,32 @@
+<mvc:View controllerName="training.bi.UI5Module.controller.Main" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+	<Shell id="shell">
+		<App id="app">
+			<pages>
+				<Page id="page" title="{i18n>title}">
+					<content>
+                        <Label text="String (3-10)"></Label>
+                        <Input id="mandatoryId" value="{
+                            path: '/mandatoryInputValue',
+                            type: 'sap.ui.model.type.String',
+                            constraints: {minLength: 3, maxLength:10}
+                            }"></Input>
+                        
+                        <Label text="Integer (0-100)"></Label>
+                        <Input value="{
+                            path: '/integerValue',
+                            type: 'sap.ui.model.type.Integer',
+                            constraints: {minimum: 0, maximum:100}
+                            }"></Input>
+                    
+                        <Label text="Austin ZIP Code"></Label>
+                        <Input value="{
+                            path: '/zip',
+                            type: 'training.bi.UI5Module.customTypes.ZIP'
+                            }"></Input>
+
+                    </content>
+				</Page>
+			</pages>
+		</App>
+	</Shell>
+</mvc:View>
